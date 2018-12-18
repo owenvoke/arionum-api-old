@@ -1,5 +1,9 @@
 <?php
 
+use Laravel\Lumen\Routing\Router;
+
+/** @var Router $router */
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,7 +15,10 @@
 |
 */
 
-/** @var \Laravel\Lumen\Routing\Router $router */
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('ping', function () {
+    return response()->json(['ack' => time()]);
 });
+
+// Account Routes
+$router->get('accounts', 'AccountsController@index');
+$router->get('accounts/{id}', 'AccountsController@show');
