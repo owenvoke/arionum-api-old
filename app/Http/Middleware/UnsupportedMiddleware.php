@@ -16,7 +16,7 @@ class UnsupportedMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (stripos($request->headers->get('content-type') ?? '', 'application/json') !== 0) {
+        if (stripos((string)$request->headers->get('content-type'), 'application/json') !== 0) {
             return response('Unsupported Media Type', 415);
         }
 
