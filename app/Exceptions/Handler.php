@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Exception               $exception
-     * @return JsonResponse
+     * @return Response|JsonResponse
      */
     public function render($request, Exception $exception): JsonResponse
     {

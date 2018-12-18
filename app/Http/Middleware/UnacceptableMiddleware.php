@@ -16,7 +16,7 @@ class UnacceptableMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $accept = $request->headers->get('accept');
+        $accept = $request->headers->get('accept') ?? '';
 
         if ($accept && stripos($accept, 'json') === false) {
             return response()->json([
