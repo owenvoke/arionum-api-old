@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Response;
 
 /**
  * Class UnacceptableMiddleware
@@ -20,8 +21,9 @@ class UnacceptableMiddleware
 
         if ($accept && stripos($accept, 'json') === false) {
             return response()->json([
-                'error' => 'You must accept JSON',
-            ], 406);
+                'status' => Response::HTTP_NOT_ACCEPTABLE,
+                'message' => 'You must accept JSON',
+            ], Response::HTTP_NOT_ACCEPTABLE);
         }
 
         return $next($request);
