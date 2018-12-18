@@ -22,3 +22,7 @@ $router->get('ping', function () {
 // Account Routes
 $router->get('accounts', 'AccountsController@index');
 $router->get('accounts/{id}', 'AccountsController@show');
+
+// Block Routes
+$router->get('blocks', 'BlocksController@index');
+$router->get('blocks/{id}', 'BlocksController@show');
