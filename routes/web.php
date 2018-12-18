@@ -30,3 +30,7 @@ $router->get('blocks/{id}', 'BlocksController@show');
 // Masternode Routes
 $router->get('masternodes', 'MasternodesController@index');
 $router->get('masternodes/{id}', 'MasternodesController@show');
+
+// Mempool Routes
+$router->get('mempools', 'MempoolsController@index');
+$router->get('mempools/{id}', 'MempoolsController@show');
