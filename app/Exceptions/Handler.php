@@ -57,9 +57,10 @@ class Handler extends ExceptionHandler
         }
 
         return new JsonResponse([
-            'message' => $exception instanceof HttpException
-                ? $exception->getMessage()
-                : 'Server Error',
+            'status' => $exception instanceof HttpException ? $exception->getStatusCode() : 500,
+            'message' => $exception instanceof HttpException && $exception->getMessage() !== '' ?
+                $exception->getMessage() :
+                'Server Error',
         ], $parentRender->status());
     }
 }
