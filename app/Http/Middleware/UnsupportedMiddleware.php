@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpKernel\Exception\UnsupportedMediaTypeHttpException;
 
 /**
  * Class UnsupportedMiddleware
@@ -18,10 +18,7 @@ class UnsupportedMiddleware
     public function handle($request, Closure $next)
     {
         if (stripos((string)$request->headers->get('content-type'), 'application/json') !== 0) {
-            return response()->json([
-                'status' => Response::HTTP_UNSUPPORTED_MEDIA_TYPE,
-                'message' => 'Unsupported Media Type',
-            ], Response::HTTP_UNSUPPORTED_MEDIA_TYPE);
+            throw new UnsupportedMediaTypeHttpException();
         }
 
         return $next($request);
