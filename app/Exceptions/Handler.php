@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -56,11 +57,14 @@ class Handler extends ExceptionHandler
             return $parentRender;
         }
 
+        if ($exception instanceof HttpException) {
+            $statusCode = $exception->getStatusCode();
+            $message = Response::$statusTexts[$exception->getStatusCode()];
+        }
+
         return new JsonResponse([
-            'status' => $exception instanceof HttpException ? $exception->getStatusCode() : 500,
-            'message' => $exception instanceof HttpException && $exception->getMessage() !== '' ?
-                $exception->getMessage() :
-                'Server Error',
+            'status' => $statusCode ?? 500,
+            'message' => $message ?? $exception->getMessage() ?? 'Server Error',
         ], $parentRender->status());
     }
 }
