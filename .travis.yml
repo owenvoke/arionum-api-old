@@ -1,0 +1,22 @@
+dist: trusty
+language: php
+
+php:
+- 7.2
+- 7.3
+
+## Cache composer
+cache:
+    directories:
+    - $HOME/.composer/cache
+
+before_script:
+- travis_retry composer update --no-interaction --prefer-dist
+
+script:
+- vendor/bin/psalm
+- vendor/bin/phpcs --standard=psr2 app/
+- vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover --testdox
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
