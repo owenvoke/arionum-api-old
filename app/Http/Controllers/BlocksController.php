@@ -18,6 +18,6 @@ class BlocksController extends Controller
     public function list(?string $id = null): JsonResponse
     {
         $data = $id ? Block::findOrFail($id) : Block::query()->paginate();
-        return fractal($data, new BlockTransformer())->respond();
+        return fractal($data, BlockTransformer::class)->respond();
     }
 }

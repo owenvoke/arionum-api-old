@@ -18,6 +18,6 @@ class TransactionsController extends Controller
     public function list(?string $id = null): JsonResponse
     {
         $data = $id ? Transaction::findOrFail($id) : Transaction::query()->paginate();
-        return fractal($data, new TransactionTransformer())->respond();
+        return fractal($data, TransactionTransformer::class)->respond();
     }
 }

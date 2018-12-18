@@ -18,6 +18,6 @@ class MempoolsController extends Controller
     public function list(?string $id = null): JsonResponse
     {
         $data = $id ? Mempool::findOrFail($id) : Mempool::query()->paginate();
-        return fractal($data, new MempoolTransformer())->respond();
+        return fractal($data, MempoolTransformer::class)->respond();
     }
 }

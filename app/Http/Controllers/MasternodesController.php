@@ -18,6 +18,6 @@ class MasternodesController extends Controller
     public function list(?string $id = null): JsonResponse
     {
         $masternodes = $id ? Masternode::findOrFail($id) : Masternode::query()->paginate();
-        return fractal($masternodes, new MasternodeTransformer())->respond();
+        return fractal($masternodes, MasternodeTransformer::class)->respond();
     }
 }
