@@ -10,11 +10,10 @@ use Tests\TestCase;
 class IndexTest extends TestCase
 {
     /**
-     * A basic test example.
-     *
+     * @test
      * @return void
      */
-    public function testExample(): void
+    public function indexWithNoJsonAccepted(): void
     {
         $this->get('/');
 
