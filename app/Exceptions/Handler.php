@@ -57,14 +57,22 @@ class Handler extends ExceptionHandler
             return $parentRender;
         }
 
-        if ($exception instanceof HttpException) {
-            $statusCode = $exception->getStatusCode();
-            $message = Response::$statusTexts[$exception->getStatusCode()];
+        $error = [
+            'status' => 500,
+            'message' => 'Server Error',
+        ];
+
+        if (env('APP_DEBUG')) {
+            $error['message'] = $exception->getMessage();
+            $error['file'] = $exception->getFile().':'.$exception->getLine();
+            $error['trace'] = explode("\n", $exception->getTraceAsString());
         }
 
-        return new JsonResponse([
-            'status' => $statusCode ?? 500,
-            'message' => $message ?? $exception->getMessage() ?? 'Server Error',
-        ], $parentRender->status());
+        if ($exception instanceof HttpException) {
+            $error['status'] = $exception->getStatusCode();
+            $error['message'] = Response::$statusTexts[$exception->getStatusCode()];
+        }
+
+        return new JsonResponse($error, $parentRender->status());
     }
 }
