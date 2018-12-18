@@ -11,23 +11,23 @@ use League\Fractal\TransformerAbstract;
 class TransactionTransformer extends TransformerAbstract
 {
     /**
-     * @param Transaction $mempool
+     * @param Transaction $transaction
      * @return array
      */
-    public function transform(Transaction $mempool): array
+    public function transform(Transaction $transaction): array
     {
         return [
-            'id' => $mempool->id,
-            'block' => $mempool->block,
-            'height' => $mempool->height,
-            'destination' => $mempool->dst,
-            'value' => $mempool->val,
-            'fee' => $mempool->fee,
-            'signature' => $mempool->signature,
-            'version' => $mempool->version,
-            'message' => $mempool->message,
-            'date' => $mempool->date,
-            'public_key' => $mempool->public_key,
+            'id' => $transaction->id,
+            'block' => $transaction->block,
+            'height' => $transaction->height,
+            'destination' => $transaction->dst,
+            'value' => $transaction->val,
+            'fee' => $transaction->fee,
+            'signature' => $transaction->signature,
+            'version' => $transaction->version,
+            'message' => $transaction->message,
+            'date' => $transaction->date,
+            'public_key' => $transaction->public_key,
         ];
     }
 }
