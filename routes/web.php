@@ -34,3 +34,7 @@ $router->get('masternodes/{id}', 'MasternodesController@show');
 // Mempool Routes
 $router->get('mempools', 'MempoolsController@index');
 $router->get('mempools/{id}', 'MempoolsController@show');
+
+// Transaction Routes
+$router->get('transactions', 'TransactionsController@index');
+$router->get('transactions/{id}', 'TransactionsController@show');
