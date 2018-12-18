@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
      * @param  \Exception               $exception
      * @return JsonResponse
      */
-    public function render($request, Exception $exception)
+    public function render($request, Exception $exception): JsonResponse
     {
         $parentRender = parent::render($request, $exception);
 
