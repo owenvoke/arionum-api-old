@@ -12,21 +12,12 @@ use Illuminate\Http\JsonResponse;
 class MasternodesController extends Controller
 {
     /**
+     * @param string|null $id
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function list(?string $id = null): JsonResponse
     {
-        $blocks = fractal(Masternode::query()->paginate(), new MasternodeTransformer())->toArray();
-        return response()->json($blocks);
-    }
-
-    /**
-     * @param string $id
-     * @return JsonResponse
-     */
-    public function show(string $id): JsonResponse
-    {
-        $block = fractal(Masternode::findOrFail($id), new MasternodeTransformer())->toArray();
-        return response()->json($block);
+        $masternodes = $id ? Masternode::findOrFail($id) : Masternode::query()->paginate();
+        return fractal($masternodes, new MasternodeTransformer())->respond();
     }
 }

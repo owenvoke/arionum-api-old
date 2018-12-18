@@ -12,21 +12,12 @@ use Illuminate\Http\JsonResponse;
 class BlocksController extends Controller
 {
     /**
+     * @param string|null $id
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function list(?string $id = null): JsonResponse
     {
-        $blocks = fractal(Block::query()->paginate(), new BlockTransformer())->toArray();
-        return response()->json($blocks);
-    }
-
-    /**
-     * @param string $id
-     * @return JsonResponse
-     */
-    public function show(string $id): JsonResponse
-    {
-        $block = fractal(Block::findOrFail($id), new BlockTransformer())->toArray();
-        return response()->json($block);
+        $data = $id ? Block::findOrFail($id) : Block::query()->paginate();
+        return fractal($data, new BlockTransformer())->respond();
     }
 }

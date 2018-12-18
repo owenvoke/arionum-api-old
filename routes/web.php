@@ -15,22 +15,20 @@ use Laravel\Lumen\Routing\Router;
 |
 */
 
-// Account Routes
-$router->get('accounts', 'AccountsController@index');
-$router->get('accounts/{id}', 'AccountsController@show');
+// API Routes
+$router->get('accounts[/{id}]', ['as' => 'accounts', 'uses' => 'AccountsController@list']);
+$router->get('blocks[/{id}]', ['as' => 'blocks', 'uses' => 'BlocksController@list']);
+$router->get('masternodes[/{id}]', ['as' => 'masternodes', 'uses' => 'MasternodesController@list']);
+$router->get('mempools[/{id}]', ['as' => 'mempools', 'uses' => 'MempoolsController@list']);
+$router->get('transactions[/{id}]', ['as' => 'transactions', 'uses' => 'TransactionsController@list']);
 
-// Block Routes
-$router->get('blocks', 'BlocksController@index');
-$router->get('blocks/{id}', 'BlocksController@show');
-
-// Masternode Routes
-$router->get('masternodes', 'MasternodesController@index');
-$router->get('masternodes/{id}', 'MasternodesController@show');
-
-// Mempool Routes
-$router->get('mempools', 'MempoolsController@index');
-$router->get('mempools/{id}', 'MempoolsController@show');
-
-// Transaction Routes
-$router->get('transactions', 'TransactionsController@index');
-$router->get('transactions/{id}', 'TransactionsController@show');
+// General
+$router->get('', function () {
+    return response()->json([
+        'accounts_url' => route('accounts'),
+        'blocks_url' => route('blocks'),
+        'masternodes_url' => route('masternodes'),
+        'mempools_url' => route('mempools'),
+        'transactions_url' => route('transactions'),
+    ]);
+});

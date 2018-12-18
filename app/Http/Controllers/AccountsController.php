@@ -12,21 +12,12 @@ use Illuminate\Http\JsonResponse;
 class AccountsController extends Controller
 {
     /**
+     * @param string|null $id
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function list(?string $id = null): JsonResponse
     {
-        $accounts = fractal(Account::query()->paginate(), new AccountTransformer())->toArray();
-        return response()->json($accounts);
-    }
-
-    /**
-     * @param string $id
-     * @return JsonResponse
-     */
-    public function show(string $id): JsonResponse
-    {
-        $account = fractal(Account::findOrFail($id), new AccountTransformer())->toArray();
-        return response()->json($account);
+        $data = $id ? Account::findOrFail($id) : Account::query()->paginate();
+        return fractal($data, new AccountTransformer())->respond();
     }
 }

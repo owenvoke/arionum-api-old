@@ -12,21 +12,12 @@ use Illuminate\Http\JsonResponse;
 class MempoolsController extends Controller
 {
     /**
+     * @param string|null $id
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function list(?string $id = null): JsonResponse
     {
-        $blocks = fractal(Mempool::query()->paginate(), new MempoolTransformer())->toArray();
-        return response()->json($blocks);
-    }
-
-    /**
-     * @param string $id
-     * @return JsonResponse
-     */
-    public function show(string $id): JsonResponse
-    {
-        $block = fractal(Mempool::findOrFail($id), new MempoolTransformer())->toArray();
-        return response()->json($block);
+        $data = $id ? Mempool::findOrFail($id) : Mempool::query()->paginate();
+        return fractal($data, new MempoolTransformer())->respond();
     }
 }
