@@ -15,10 +15,6 @@ use Laravel\Lumen\Routing\Router;
 |
 */
 
-$router->get('ping', function () {
-    return response()->json(['ack' => time()]);
-});
-
 // Account Routes
 $router->get('accounts', 'AccountsController@index');
 $router->get('accounts/{id}', 'AccountsController@show');
