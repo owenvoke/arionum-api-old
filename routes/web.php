@@ -26,3 +26,7 @@ $router->get('accounts/{id}', 'AccountsController@show');
 // Block Routes
 $router->get('blocks', 'BlocksController@index');
 $router->get('blocks/{id}', 'BlocksController@show');
+
+// Masternode Routes
+$router->get('masternodes', 'MasternodesController@index');
+$router->get('masternodes/{id}', 'MasternodesController@show');
