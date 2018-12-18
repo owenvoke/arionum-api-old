@@ -22,6 +22,12 @@ class AccountTransformer extends TransformerAbstract
             'block' => $account->block,
             'balance' => $account->balance,
             'alias' => $account->alias,
+            'links' => [
+                [
+                    'rel' => 'self',
+                    'uri' => route('accounts', ['id' => $account->id]),
+                ],
+            ],
         ];
     }
 }

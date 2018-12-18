@@ -29,6 +29,12 @@ class MempoolTransformer extends TransformerAbstract
             'public_key' => $mempool->public_key,
             'date' => $mempool->date,
             'peer' => $mempool->peer,
+            'links' => [
+                [
+                    'rel' => 'self',
+                    'uri' => route('mempools', ['id' => $mempool->id]),
+                ],
+            ],
         ];
     }
 }

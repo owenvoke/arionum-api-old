@@ -26,6 +26,12 @@ class BlockTransformer extends TransformerAbstract
             'difficulty' => $block->difficulty,
             'argon' => $block->argon,
             'transactions' => $block->transactions,
+            'links' => [
+                [
+                    'rel' => 'self',
+                    'uri' => route('blocks', ['id' => $block->id]),
+                ],
+            ],
         ];
     }
 }

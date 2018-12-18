@@ -24,6 +24,12 @@ class MasternodeTransformer extends TransformerAbstract
             'blacklist' => $masternode->blacklist,
             'fails' => $masternode->fails,
             'status' => $masternode->status,
+            'links' => [
+                [
+                    'rel' => 'self',
+                    'uri' => route('masternodes', ['id' => $masternode->public_key]),
+                ],
+            ],
         ];
     }
 }

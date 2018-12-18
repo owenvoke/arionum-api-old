@@ -28,6 +28,12 @@ class TransactionTransformer extends TransformerAbstract
             'message' => $transaction->message,
             'date' => $transaction->date,
             'public_key' => $transaction->public_key,
+            'links' => [
+                [
+                    'rel' => 'self',
+                    'uri' => route('transactions', ['id' => $transaction->id]),
+                ],
+            ],
         ];
     }
 }
