@@ -9,15 +9,43 @@ use Tests\TestCase;
  */
 class IndexTest extends TestCase
 {
+    /** @var string */
+    private const JSON_MIME_TYPE = 'application/json';
+
     /**
      * @test
      * @return void
      */
-    public function indexWithNoJsonAccepted(): void
+    public function indexWithOnlyContentTypeAccepted(): void
     {
-        $this->get('/');
+        $this->get('/', [
+            'Content-Type' => self::JSON_MIME_TYPE,
+        ])->seeJsonEquals(['message' => 'You must accept JSON', 'status' => 406]);
+    }
 
-        $this->assertJson($this->response->getContent());
-        $this->seeJson([['error' => 'You must accept JSON']], $this->response->getContent());
+    /**
+     * @test
+     * @return void
+     */
+    public function indexWithOnlyJsonAccepted(): void
+    {
+        $this->get('/', [
+            'Accept' => self::JSON_MIME_TYPE,
+        ])->seeJsonEquals(['message' => 'Unsupported Media Type', 'status' => 415]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    public function indexWithJsonHeaders(): void
+    {
+        $this->json('GET', '/')->seeJsonEquals([
+            'accounts_url' => route('accounts'),
+            'blocks_url' => route('blocks'),
+            'masternodes_url' => route('masternodes'),
+            'mempools_url' => route('mempools'),
+            'transactions_url' => route('transactions'),
+        ]);
     }
 }
