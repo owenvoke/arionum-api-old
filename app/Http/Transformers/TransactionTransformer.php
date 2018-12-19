@@ -20,7 +20,7 @@ class TransactionTransformer extends TransformerAbstract
             'id' => $transaction->id,
             'block_id' => $transaction->block,
             'height' => $transaction->height,
-            'destination' => $transaction->dst,
+            'destination_address' => $transaction->dst,
             'value' => $transaction->val,
             'fee' => $transaction->fee,
             'signature' => $transaction->signature,
