@@ -17,7 +17,7 @@ class BlocksController extends Controller
      */
     public function list(?string $id = null): JsonResponse
     {
-        $data = $id ? Block::findOrFail($id) : Block::query()->paginate();
+        $data = $id ? Block::findOrFail($id) : Block::query()->orderByDesc('date')->paginate();
         return fractal($data, BlockTransformer::class)->respond();
     }
 }
