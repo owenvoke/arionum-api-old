@@ -19,9 +19,15 @@ class AccountTransformer extends TransformerAbstract
         return [
             'id' => $account->id,
             'public_key' => $account->public_key,
-            'block' => $account->block,
+            'block_id' => $account->block,
             'balance' => $account->balance,
             'alias' => $account->alias,
+            'links' => [
+                [
+                    'rel' => 'self',
+                    'uri' => route('accounts', ['id' => $account->id]),
+                ],
+            ],
         ];
     }
 }

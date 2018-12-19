@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException;
 
 /**
  * Class UnacceptableMiddleware
@@ -19,9 +20,7 @@ class UnacceptableMiddleware
         $accept = (string)$request->headers->get('accept');
 
         if ($accept && stripos($accept, 'json') === false) {
-            return response()->json([
-                'error' => 'You must accept JSON',
-            ], 406);
+            throw new NotAcceptableHttpException('You must accept JSON');
         }
 
         return $next($request);

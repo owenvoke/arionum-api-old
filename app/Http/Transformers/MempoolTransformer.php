@@ -19,8 +19,8 @@ class MempoolTransformer extends TransformerAbstract
         return [
             'id' => $mempool->id,
             'height' => $mempool->height,
-            'source' => $mempool->src,
-            'destination' => $mempool->dst,
+            'source_address' => $mempool->src,
+            'destination_address' => $mempool->dst,
             'value' => $mempool->val,
             'fee' => $mempool->fee,
             'signature' => $mempool->signature,
@@ -29,6 +29,12 @@ class MempoolTransformer extends TransformerAbstract
             'public_key' => $mempool->public_key,
             'date' => $mempool->date,
             'peer' => $mempool->peer,
+            'links' => [
+                [
+                    'rel' => 'self',
+                    'uri' => route('mempools', ['id' => $mempool->id]),
+                ],
+            ],
         ];
     }
 }

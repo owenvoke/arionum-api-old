@@ -18,6 +18,6 @@ class AccountsController extends Controller
     public function list(?string $id = null): JsonResponse
     {
         $data = $id ? Account::findOrFail($id) : Account::query()->paginate();
-        return fractal($data, new AccountTransformer())->respond();
+        return fractal($data, AccountTransformer::class)->respond();
     }
 }

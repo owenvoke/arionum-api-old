@@ -70,7 +70,9 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof HttpException) {
             $error['status'] = $exception->getStatusCode();
-            $error['message'] = Response::$statusTexts[$exception->getStatusCode()];
+            $error['message'] = $exception->getMessage() !== '' ?
+                $exception->getMessage() :
+                Response::$statusTexts[$exception->getStatusCode()];
         }
 
         return new JsonResponse($error, $parentRender->status());
