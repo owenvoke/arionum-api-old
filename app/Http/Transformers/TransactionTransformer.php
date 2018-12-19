@@ -18,7 +18,7 @@ class TransactionTransformer extends TransformerAbstract
     {
         return [
             'id' => $transaction->id,
-            'block' => $transaction->block,
+            'block_id' => $transaction->block,
             'height' => $transaction->height,
             'destination' => $transaction->dst,
             'value' => $transaction->val,
