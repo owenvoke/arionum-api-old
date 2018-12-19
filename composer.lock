@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af4708b0a987b7d46c6fe6eda64b2c42",
+    "content-hash": "d8ad1ca1ae7fef65ed41930b934f18dd",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -4061,6 +4061,17 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Roave/SecurityAdvisories.git",
+                "reference": "3557820049b07ea0fd088e4151ec200f474b58de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/3557820049b07ea0fd088e4151ec200f474b58de",
+                "reference": "3557820049b07ea0fd088e4151ec200f474b58de",
+                "shasum": ""
+            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.12",
@@ -5016,16 +5027,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "2.0.17",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "ead7d62d489d58edb4fa03b21e4f0bc87a476211"
+                "reference": "d9a42cf33d3f2c0bc2d645bf5a3acd4f0b4f5984"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/ead7d62d489d58edb4fa03b21e4f0bc87a476211",
-                "reference": "ead7d62d489d58edb4fa03b21e4f0bc87a476211",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/d9a42cf33d3f2c0bc2d645bf5a3acd4f0b4f5984",
+                "reference": "d9a42cf33d3f2c0bc2d645bf5a3acd4f0b4f5984",
                 "shasum": ""
             },
             "require": {
@@ -5034,12 +5045,13 @@
                 "felixfbecker/language-server-protocol": "^1.2",
                 "muglug/package-versions-56": "1.2.4",
                 "netresearch/jsonmapper": "^1.0",
-                "nikic/php-parser": "^4.0.3 || ^4.1",
+                "nikic/php-parser": "^4.0.2 || ^4.1",
                 "openlss/lib-array2xml": "^0.0.10||^0.5.1",
                 "php": "^7.0",
                 "php-cs-fixer/diff": "^1.2",
                 "sabre/event": "^5.0.1",
                 "sabre/uri": "^2.0",
+                "symfony/console": "^3.0||^4.0",
                 "webmozart/glob": "^4.1",
                 "webmozart/path-util": "^2.3"
             },
@@ -5048,7 +5060,6 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.2",
-                "php-coveralls/php-coveralls": "^2.0",
                 "phpunit/phpunit": "^6.0 || ^7.0",
                 "squizlabs/php_codesniffer": "^3.0"
             },
@@ -5058,17 +5069,20 @@
             "bin": [
                 "psalm",
                 "psalter",
-                "psalm-language-server"
+                "psalm-language-server",
+                "psalm-plugin"
             ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev",
+                    "dev-master": "3.x-dev",
+                    "dev-2.x": "2.x-dev",
                     "dev-1.x": "1.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
+                    "Psalm\\Plugin\\": "src/Psalm/Plugin",
                     "Psalm\\": "src/Psalm"
                 }
             },
@@ -5087,7 +5101,7 @@
                 "inspection",
                 "php"
             ],
-            "time": "2018-11-09T19:18:46+00:00"
+            "time": "2018-12-14T17:35:02+00:00"
         },
         {
             "name": "webmozart/assert",
