@@ -4064,12 +4064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "3557820049b07ea0fd088e4151ec200f474b58de"
+                "reference": "f370ac042dba652a93b6b1f330b33d86f3778b57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/3557820049b07ea0fd088e4151ec200f474b58de",
-                "reference": "3557820049b07ea0fd088e4151ec200f474b58de",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f370ac042dba652a93b6b1f330b33d86f3778b57",
+                "reference": "f370ac042dba652a93b6b1f330b33d86f3778b57",
                 "shasum": ""
             },
             "conflict": {
@@ -4166,7 +4166,7 @@
                 "silverstripe/userforms": "<3",
                 "simple-updates/phpwhois": "<=1",
                 "simplesamlphp/saml2": "<1.10.6|>=2,<2.3.8|>=3,<3.1.4",
-                "simplesamlphp/simplesamlphp": "<1.15.2",
+                "simplesamlphp/simplesamlphp": "<1.16.3",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "slim/slim": "<2.6",
                 "smarty/smarty": "<3.1.33",
@@ -4258,7 +4258,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-12-14T13:12:19+00:00"
+            "time": "2018-12-23T19:42:44+00:00"
         },
         {
             "name": "sabre/event",
@@ -5027,16 +5027,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "3.0.5",
+            "version": "3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "d9a42cf33d3f2c0bc2d645bf5a3acd4f0b4f5984"
+                "reference": "10a36def968a4e642b1afec74e3f0be602c79f58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/d9a42cf33d3f2c0bc2d645bf5a3acd4f0b4f5984",
-                "reference": "d9a42cf33d3f2c0bc2d645bf5a3acd4f0b4f5984",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/10a36def968a4e642b1afec74e3f0be602c79f58",
+                "reference": "10a36def968a4e642b1afec74e3f0be602c79f58",
                 "shasum": ""
             },
             "require": {
@@ -5101,7 +5101,7 @@
                 "inspection",
                 "php"
             ],
-            "time": "2018-12-14T17:35:02+00:00"
+            "time": "2018-12-21T18:53:22+00:00"
         },
         {
             "name": "webmozart/assert",
