@@ -5,15 +5,8 @@ namespace App\Http\Transformers;
 use App\Account;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class AccountTransformer
- */
 class AccountTransformer extends TransformerAbstract
 {
-    /**
-     * @param Account $account
-     * @return array
-     */
     public function transform(Account $account): array
     {
         return [

@@ -5,15 +5,8 @@ namespace App\Http\Transformers;
 use App\Block;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class BlockTransformer
- */
 class BlockTransformer extends TransformerAbstract
 {
-    /**
-     * @param Block $block
-     * @return array
-     */
     public function transform(Block $block): array
     {
         return [

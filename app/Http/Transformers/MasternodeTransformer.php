@@ -5,15 +5,8 @@ namespace App\Http\Transformers;
 use App\Masternode;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class MasternodeTransformer
- */
 class MasternodeTransformer extends TransformerAbstract
 {
-    /**
-     * @param Masternode $masternode
-     * @return array
-     */
     public function transform(Masternode $masternode): array
     {
         return [

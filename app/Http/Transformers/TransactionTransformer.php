@@ -5,15 +5,8 @@ namespace App\Http\Transformers;
 use App\Transaction;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class TransactionTransformer
- */
 class TransactionTransformer extends TransformerAbstract
 {
-    /**
-     * @param Transaction $transaction
-     * @return array
-     */
     public function transform(Transaction $transaction): array
     {
         return [
