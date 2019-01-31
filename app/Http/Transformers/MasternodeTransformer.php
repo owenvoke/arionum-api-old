@@ -7,7 +7,7 @@ use League\Fractal\TransformerAbstract;
 
 class MasternodeTransformer extends TransformerAbstract
 {
-    public function transform(Masternode $masternode): array
+    public static function transform(Masternode $masternode): array
     {
         return [
             'id' => $masternode->public_key,

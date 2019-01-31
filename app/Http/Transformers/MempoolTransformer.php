@@ -7,7 +7,7 @@ use League\Fractal\TransformerAbstract;
 
 class MempoolTransformer extends TransformerAbstract
 {
-    public function transform(Mempool $mempool): array
+    public static function transform(Mempool $mempool): array
     {
         return [
             'id' => $mempool->id,

@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 
 class TransactionTransformer extends TransformerAbstract
 {
-    public function transform(Transaction $transaction): array
+    public static function transform(Transaction $transaction): array
     {
         return [
             'id' => $transaction->id,

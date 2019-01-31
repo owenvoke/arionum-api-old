@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 
 class BlockTransformer extends TransformerAbstract
 {
-    public function transform(Block $block): array
+    public static function transform(Block $block): array
     {
         return [
             'id' => $block->id,
