@@ -16,7 +16,7 @@ use Laravel\Lumen\Routing\Router;
 */
 
 // API Routes
-$router->group(['namespace' => 'v1', 'prefix' => 1], function (Router $router) {
+$router->group(['namespace' => 'v1', 'prefix' => 1, 'as' => 'v1'], function (Router $router) {
     $router->get('accounts[/{id}]', ['as' => 'accounts', 'uses' => 'AccountsController@list']);
     $router->get('blocks[/{id}]', ['as' => 'blocks', 'uses' => 'BlocksController@list']);
     $router->get('masternodes[/{id}]', ['as' => 'masternodes', 'uses' => 'MasternodesController@list']);
@@ -25,12 +25,6 @@ $router->group(['namespace' => 'v1', 'prefix' => 1], function (Router $router) {
 });
 
 // General
-$router->get('', function () {
-    return response()->json([
-        'accounts_url' => route('accounts'),
-        'blocks_url' => route('blocks'),
-        'masternodes_url' => route('masternodes'),
-        'mempools_url' => route('mempools'),
-        'transactions_url' => route('transactions'),
-    ]);
+$router->get('', function () use ($router) {
+    return response()->json(['routes' => $router->namedRoutes]);
 });
