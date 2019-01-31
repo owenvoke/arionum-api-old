@@ -1,20 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\v1;
 
+use App\Http\Controllers\Controller;
 use App\Http\Transformers\MempoolTransformer;
 use App\Mempool;
 use Illuminate\Http\JsonResponse;
 
-/**
- * Class MempoolsController
- */
 class MempoolsController extends Controller
 {
-    /**
-     * @param string|null $id
-     * @return JsonResponse
-     */
     public function list(?string $id = null): JsonResponse
     {
         $data = $id ? Mempool::findOrFail($id) : Mempool::query()->orderByDesc('date')->paginate();
