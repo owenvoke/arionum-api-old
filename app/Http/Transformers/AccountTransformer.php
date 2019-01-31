@@ -3,6 +3,7 @@
 namespace App\Http\Transformers;
 
 use App\Account;
+use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
 class AccountTransformer extends TransformerAbstract
@@ -19,6 +20,7 @@ class AccountTransformer extends TransformerAbstract
                 [
                     'rel' => 'self',
                     'uri' => route('v1.accounts', ['id' => $account->id]),
+                    'explorer' => ArionumExplorer::transactionUri($account->id),
                 ],
             ],
         ];
