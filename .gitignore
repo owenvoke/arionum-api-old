@@ -1,4 +1,7 @@
+/build
 /vendor
+/phpcs.xml
+/phpunit.xml
 Homestead.json
 Homestead.yaml
 .env
