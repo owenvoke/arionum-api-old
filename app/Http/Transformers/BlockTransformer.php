@@ -3,6 +3,7 @@
 namespace App\Http\Transformers;
 
 use App\Block;
+use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
 class BlockTransformer extends TransformerAbstract
@@ -23,6 +24,7 @@ class BlockTransformer extends TransformerAbstract
                 [
                     'rel' => 'self',
                     'uri' => route('v1.blocks', ['id' => $block->id]),
+                    'explorer' => ArionumExplorer::transactionUri($block->id),
                 ],
             ],
         ];
