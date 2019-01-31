@@ -24,7 +24,7 @@ class TransactionTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('transactions', ['id' => $transaction->id]),
+                    'uri' => route('v1.transactions', ['id' => $transaction->id]),
                 ],
             ],
         ];

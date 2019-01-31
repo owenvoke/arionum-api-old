@@ -18,7 +18,7 @@ class AccountTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('accounts', ['id' => $account->id]),
+                    'uri' => route('v1.accounts', ['id' => $account->id]),
                 ],
             ],
         ];

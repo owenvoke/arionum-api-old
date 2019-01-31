@@ -20,7 +20,7 @@ class MasternodeTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('masternodes', ['id' => $masternode->public_key]),
+                    'uri' => route('v1.masternodes', ['id' => $masternode->public_key]),
                 ],
             ],
         ];

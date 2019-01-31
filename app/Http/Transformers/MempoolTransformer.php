@@ -25,7 +25,7 @@ class MempoolTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('mempools', ['id' => $mempool->id]),
+                    'uri' => route('v1.mempools', ['id' => $mempool->id]),
                 ],
             ],
         ];

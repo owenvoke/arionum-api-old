@@ -22,7 +22,7 @@ class BlockTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('blocks', ['id' => $block->id]),
+                    'uri' => route('v1.blocks', ['id' => $block->id]),
                 ],
             ],
         ];
