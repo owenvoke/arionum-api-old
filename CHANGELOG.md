@@ -6,6 +6,9 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+### Fixed
+- Fix reference links to the explorer ([f868420](https://github.com/pxgamer/arionum-api/commit/f8684206d54471d06778a50defd6a8482e8728f1)
+
 ## [v1.0.0-alpha.4] - 2019-02-04
 
 ### Fixed
