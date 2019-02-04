@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read string                 $alias
  *
  * @property-read Collection|Transaction $transactionsFrom
- * @property-read Collection|Transaction $transactionsTi
+ * @property-read Collection|Transaction $transactionsTo
  */
 class Account extends Model
 {
