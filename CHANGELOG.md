@@ -6,6 +6,11 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.0.0-alpha.4] - 2019-02-04
+
+### Fixed
+- Fix reference URI links in account/block transformers ([0363484](https://github.com/pxgamer/arionum-api/commit/036348442ac0e5b1fa6cde49d385d0922be7402b))
+
 ## [v1.0.0-alpha.3] - 2019-02-04
 
 ### Added
