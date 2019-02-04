@@ -61,7 +61,6 @@ $app->singleton(
 
 $app->middleware([
     App\Http\Middleware\UnacceptableMiddleware::class,
-    App\Http\Middleware\UnsupportedMiddleware::class,
 ]);
 
 // $app->routeMiddleware([

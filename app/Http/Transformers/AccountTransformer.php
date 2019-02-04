@@ -3,18 +3,12 @@
 namespace App\Http\Transformers;
 
 use App\Account;
+use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class AccountTransformer
- */
 class AccountTransformer extends TransformerAbstract
 {
-    /**
-     * @param Account $account
-     * @return array
-     */
-    public function transform(Account $account): array
+    public static function transform(Account $account): array
     {
         return [
             'id' => $account->id,
@@ -25,7 +19,8 @@ class AccountTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('accounts', ['id' => $account->id]),
+                    'uri' => route('v1.accounts', ['id' => $account->id]),
+                    'explorer' => ArionumExplorer::transactionUri($account->id),
                 ],
             ],
         ];

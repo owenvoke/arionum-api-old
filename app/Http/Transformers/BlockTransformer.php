@@ -3,18 +3,12 @@
 namespace App\Http\Transformers;
 
 use App\Block;
+use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class BlockTransformer
- */
 class BlockTransformer extends TransformerAbstract
 {
-    /**
-     * @param Block $block
-     * @return array
-     */
-    public function transform(Block $block): array
+    public static function transform(Block $block): array
     {
         return [
             'id' => $block->id,
@@ -29,7 +23,8 @@ class BlockTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('blocks', ['id' => $block->id]),
+                    'uri' => route('v1.blocks', ['id' => $block->id]),
+                    'explorer' => ArionumExplorer::transactionUri($block->id),
                 ],
             ],
         ];

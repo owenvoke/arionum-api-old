@@ -5,16 +5,9 @@ namespace App\Http\Transformers;
 use App\Masternode;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class MasternodeTransformer
- */
 class MasternodeTransformer extends TransformerAbstract
 {
-    /**
-     * @param Masternode $masternode
-     * @return array
-     */
-    public function transform(Masternode $masternode): array
+    public static function transform(Masternode $masternode): array
     {
         return [
             'id' => $masternode->public_key,
@@ -27,7 +20,7 @@ class MasternodeTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('masternodes', ['id' => $masternode->public_key]),
+                    'uri' => route('v1.masternodes', ['id' => $masternode->public_key]),
                 ],
             ],
         ];

@@ -5,16 +5,9 @@ namespace App\Http\Transformers;
 use App\Mempool;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class MempoolTransformer
- */
 class MempoolTransformer extends TransformerAbstract
 {
-    /**
-     * @param Mempool $mempool
-     * @return array
-     */
-    public function transform(Mempool $mempool): array
+    public static function transform(Mempool $mempool): array
     {
         return [
             'id' => $mempool->id,
@@ -32,7 +25,7 @@ class MempoolTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('mempools', ['id' => $mempool->id]),
+                    'uri' => route('v1.mempools', ['id' => $mempool->id]),
                 ],
             ],
         ];

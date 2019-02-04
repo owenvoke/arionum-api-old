@@ -2,19 +2,13 @@
 
 namespace App\Http\Transformers;
 
+use App\Generators\ArionumExplorer;
 use App\Transaction;
 use League\Fractal\TransformerAbstract;
 
-/**
- * Class TransactionTransformer
- */
 class TransactionTransformer extends TransformerAbstract
 {
-    /**
-     * @param Transaction $transaction
-     * @return array
-     */
-    public function transform(Transaction $transaction): array
+    public static function transform(Transaction $transaction): array
     {
         return [
             'id' => $transaction->id,
@@ -31,7 +25,8 @@ class TransactionTransformer extends TransformerAbstract
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => route('transactions', ['id' => $transaction->id]),
+                    'uri' => route('v1.transactions', ['id' => $transaction->id]),
+                    'explorer' => ArionumExplorer::transactionUri($transaction->id),
                 ],
             ],
         ];
