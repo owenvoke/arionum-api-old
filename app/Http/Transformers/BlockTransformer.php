@@ -24,7 +24,7 @@ class BlockTransformer extends TransformerAbstract
                 [
                     'rel' => 'self',
                     'uri' => route('v1.blocks', ['id' => $block->id]),
-                    'explorer' => ArionumExplorer::transactionUri($block->id),
+                    'explorer' => ArionumExplorer::blockUri($block->id),
                 ],
             ],
         ];
