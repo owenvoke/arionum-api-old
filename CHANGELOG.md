@@ -6,6 +6,18 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.0.0-alpha.3] - 2019-02-04
+
+### Added
+- Add Block Explorer links to the API ([a14bb68](https://github.com/pxgamer/arionum-api/commit/a14bb6847cc6aacd697f2e6dfbf2b25481985aa0))
+
+### Changed
+- Merge API components to a `v1` namespace ([5c2d69a](https://github.com/pxgamer/arionum-api/commit/5c2d69a84710f67260b55cee9f8095ea57aae38a))
+
+### Removed
+- Remove `Content-Type` detection middleware ([7de2652](https://github.com/pxgamer/arionum-api/commit/7de2652f0485fbfd35f727bcd07ca90ae335d2b6))
+- Remove redundant feature tests ([2196b9f](https://github.com/pxgamer/arionum-api/commit/2196b9f687f1d329c90192071d64908cc14b53fb))
+
 ## [v1.0.0-alpha.2] - 2018-12-19
 
 ### Added
@@ -23,4 +35,5 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Initial release for alpha use
 
 [Unreleased]: https://github.com/pxgamer/arionum-api/compare/master...develop
+[v1.0.0-alpha.3]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.2...v1.0.0-alpha.3
 [v1.0.0-alpha.2]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.1...v1.0.0-alpha.2
