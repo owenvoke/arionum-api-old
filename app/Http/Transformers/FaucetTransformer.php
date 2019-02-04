@@ -3,6 +3,7 @@
 namespace App\Http\Transformers;
 
 use App\Account;
+use App\Generators\ArionumExplorer;
 use League\Fractal\Resource\Collection;
 use League\Fractal\TransformerAbstract;
 
