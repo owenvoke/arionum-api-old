@@ -32,7 +32,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Update middleware to throw exceptions for consistency ([9ddc517f](https://github.com/pxgamer/arionum-api/commit/9ddc517f2b819e340992f18c37547668759a19e3))
 - Order eloquent results by the date column ([1c70e846](https://github.com/pxgamer/arionum-api/commit/1c70e8469c277888a6a987d4b960cc9498d39add))
 - Update 'block' to 'block_id' for transformers ([4a77e0e5](https://github.com/pxgamer/arionum-api/commit/4a77e0e59dd747da877fe3c9c2456735e69fffc3))
-- Update to use _address suffix for transformers ([215f5dc6](https://github.com/pxgamer/arionum-api/commit/215f5dc694f09b036ba6afe4e2f2b3741b8e2234))
+- Update to use `_address` suffix for transformers ([215f5dc6](https://github.com/pxgamer/arionum-api/commit/215f5dc694f09b036ba6afe4e2f2b3741b8e2234))
 
 ## v1.0.0-alpha.1 - 2018-12-18
 
