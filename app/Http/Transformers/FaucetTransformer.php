@@ -10,7 +10,7 @@ use League\Fractal\TransformerAbstract;
 class FaucetTransformer extends TransformerAbstract
 {
     protected $availableIncludes = [
-        'transactions'
+        'transactions',
     ];
 
 
@@ -19,15 +19,15 @@ class FaucetTransformer extends TransformerAbstract
         return [
             'account' => $account,
             'links' => [
-                 [
-                     'rel' => 'self',
-                     'uri' => route('v1.accounts', ['id' => $account->id]),
-                 ],
-                 [
-                     'rel' => 'explorer',
-                     'uri' => ArionumExplorer::accountUri($account->id),
-                 ]
-             ],
+                [
+                    'rel' => 'self',
+                    'uri' => route('v1.accounts', ['id' => $account->id]),
+                ],
+                [
+                    'rel' => 'explorer',
+                    'uri' => ArionumExplorer::accountUri($account->id),
+                ],
+            ],
         ];
     }
 
