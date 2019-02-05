@@ -23,6 +23,8 @@ $router->group(['namespace' => 'v1', 'prefix' => 1, 'as' => 'v1'], function (Rou
     $router->get('mempools[/{id}]', ['as' => 'mempools', 'uses' => 'MempoolsController@list']);
     $router->get('transactions[/{id}]', ['as' => 'transactions', 'uses' => 'TransactionsController@list']);
 
+    $router->get('aliases[/{id}]', ['as' => 'alias', 'uses' => 'AliasController@list']);
+
     $router->get('faucet', ['as' => 'faucet', 'uses' => 'FaucetController@index']);
     $router->get('faucet/balance', ['as' => 'faucet.balance', 'uses' => 'FaucetController@balance']);
 });
