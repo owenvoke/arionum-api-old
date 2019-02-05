@@ -6,6 +6,9 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+### Added
+- Add components for the alias API ([1e6dc169](https://github.com/pxgamer/arionum-api/commit/1e6dc169143a44d8c877c950af231a42683cb4f9))
+
 ### Fixed
 - Fix reference links to the explorer ([f868420](https://github.com/pxgamer/arionum-api/commit/f8684206d54471d06778a50defd6a8482e8728f1))
 
