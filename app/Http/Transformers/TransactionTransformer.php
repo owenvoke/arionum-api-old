@@ -26,7 +26,10 @@ class TransactionTransformer extends TransformerAbstract
                 [
                     'rel' => 'self',
                     'uri' => route('v1.transactions', ['id' => $transaction->id]),
-                    'explorer' => ArionumExplorer::transactionUri($transaction->id),
+                ],
+                [
+                    'rel' => 'explorer',
+                    'uri' => ArionumExplorer::transactionUri($transaction->id),
                 ],
             ],
         ];

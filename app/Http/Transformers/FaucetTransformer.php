@@ -4,18 +4,20 @@ namespace App\Http\Transformers;
 
 use App\Account;
 use App\Generators\ArionumExplorer;
+use League\Fractal\Resource\Collection;
 use League\Fractal\TransformerAbstract;
 
-class AccountTransformer extends TransformerAbstract
+class FaucetTransformer extends TransformerAbstract
 {
+    protected $availableIncludes = [
+        'transactions',
+    ];
+
+
     public static function transform(Account $account): array
     {
         return [
-            'id' => $account->id,
-            'public_key' => $account->public_key,
-            'block_id' => $account->block,
-            'balance' => $account->balance,
-            'alias' => $account->alias,
+            'account' => $account,
             'links' => [
                 [
                     'rel' => 'self',
@@ -27,5 +29,12 @@ class AccountTransformer extends TransformerAbstract
                 ],
             ],
         ];
+    }
+
+    public function includeTransactions(Account $account): Collection
+    {
+        $transaction = $account->transactionsFrom()->paginate();
+
+        return $this->collection($transaction, new TransactionTransformer());
     }
 }
