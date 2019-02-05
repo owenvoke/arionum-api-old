@@ -37,4 +37,9 @@ class Account extends Model
     {
         return $this->hasMany(Transaction::class, 'dst');
     }
+
+    public static function findByAlias(string $alias): self
+    {
+        return self::query()->where('alias', $alias)->firstOrFail();
+    }
 }
