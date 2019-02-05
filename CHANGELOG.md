@@ -6,6 +6,8 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.0.0-alpha.5] - 2019-02-05
+
 ### Added
 - Add components for the alias API ([1e6dc169](https://github.com/pxgamer/arionum-api/commit/1e6dc169143a44d8c877c950af231a42683cb4f9))
 
@@ -46,6 +48,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Initial release for alpha use
 
 [Unreleased]: https://github.com/pxgamer/arionum-api/compare/master...develop
+[v1.0.0-alpha.5]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.4...v1.0.0-alpha.5
 [v1.0.0-alpha.4]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.3...v1.0.0-alpha.4
 [v1.0.0-alpha.3]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.2...v1.0.0-alpha.3
 [v1.0.0-alpha.2]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.1...v1.0.0-alpha.2
