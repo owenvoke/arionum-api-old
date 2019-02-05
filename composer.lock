@@ -4067,6 +4067,17 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Roave/SecurityAdvisories.git",
+                "reference": "e1b9176e35e8a4521c8b9720f4b5601d5caa68c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e1b9176e35e8a4521c8b9720f4b5601d5caa68c5",
+                "reference": "e1b9176e35e8a4521c8b9720f4b5601d5caa68c5",
+                "shasum": ""
+            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.12",
