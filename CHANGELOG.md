@@ -12,7 +12,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Update to use Lumen 5.8 ([#10](https://github.com/pxgamer/arionum-api/issues/10))
 
 ### Removed
-- Remove support for PHP 7.2 ([97b9a94f](https://github.com/pxgamer/arionum-api/commit/97b9a94ff84657d10939cd5658473d08407e41cc)
+- Remove support for PHP 7.2 ([97b9a94f](https://github.com/pxgamer/arionum-api/commit/97b9a94ff84657d10939cd5658473d08407e41cc))
 
 ## [v1.0.0-alpha.5] - 2019-02-05
 
