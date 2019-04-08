@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read Collection|Transaction $transactionsFrom
  * @property-read Collection|Transaction $transactionsTo
  */
-class Account extends Model
+final class Account extends Model
 {
     /** @var bool */
     public $incrementing = false;

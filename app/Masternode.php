@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int    $fails
  * @property-read int    $status
  */
-class Masternode extends Model
+final class Masternode extends Model
 {
     /** @var bool */
     public $incrementing = false;

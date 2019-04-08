@@ -21,7 +21,7 @@ use Illuminate\Support\Carbon;
  * @property-read Carbon $date
  * @property-read string $peer
  */
-class Mempool extends Model
+final class Mempool extends Model
 {
     /** @var bool */
     public $incrementing = false;

@@ -20,7 +20,7 @@ use Illuminate\Support\Carbon;
  * @property-read Carbon $date
  * @property-read string $public_key
  */
-class Transaction extends Model
+final class Transaction extends Model
 {
     /** @var bool */
     public $incrementing = false;
