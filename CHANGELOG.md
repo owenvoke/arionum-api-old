@@ -6,6 +6,10 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+### Changed
+- Update the middleware to require content-type ([55514e54](https://github.com/pxgamer/arionum-api/commit/55514e54123cd675142a54f1165401e04a52e99d))
+- Update the route callbacks to be static ([d2f21f27](https://github.com/pxgamer/arionum-api/commit/d2f21f2740270298e365a4e0fd84bc393caaad5d))
+
 ## [v1.0.0-alpha.6] - 2019-03-19
 
 ### Changed
