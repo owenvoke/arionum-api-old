@@ -18,7 +18,7 @@ use Illuminate\Support\Carbon;
  * @property-read string $argon
  * @property-read int    $transactions
  */
-class Block extends Model
+final class Block extends Model
 {
     /** @var bool */
     public $incrementing = false;

@@ -8,7 +8,7 @@ use App\Http\Transformers\FaucetTransformer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class FaucetController extends Controller
+final class FaucetController extends Controller
 {
     public const ADDRESS = '2bG9Z7LiMaCoz6WhcnR55z8Uz73RdmLDyn62bWTovuPLK4x6ThYyWGaUKL5HKBHE3UUzsjNJk8He9BNKFd5Zr93Q';
 

@@ -58,7 +58,7 @@ $app->singleton(
 */
 
 $app->middleware([
-    App\Http\Middleware\UnacceptableMiddleware::class,
+    App\Http\Middleware\PreconditionHeaderMiddleware::class,
 ]);
 
 // $app->routeMiddleware([

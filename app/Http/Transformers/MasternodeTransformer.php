@@ -5,7 +5,7 @@ namespace App\Http\Transformers;
 use App\Masternode;
 use League\Fractal\TransformerAbstract;
 
-class MasternodeTransformer extends TransformerAbstract
+final class MasternodeTransformer extends TransformerAbstract
 {
     public static function transform(Masternode $masternode): array
     {

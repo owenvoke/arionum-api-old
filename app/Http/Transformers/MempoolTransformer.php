@@ -5,7 +5,7 @@ namespace App\Http\Transformers;
 use App\Mempool;
 use League\Fractal\TransformerAbstract;
 
-class MempoolTransformer extends TransformerAbstract
+final class MempoolTransformer extends TransformerAbstract
 {
     public static function transform(Mempool $mempool): array
     {

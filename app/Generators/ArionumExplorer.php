@@ -2,7 +2,7 @@
 
 namespace App\Generators;
 
-class ArionumExplorer
+final class ArionumExplorer
 {
     public const BASE_URI = 'https://arionum.info';
 

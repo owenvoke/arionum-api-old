@@ -7,7 +7,7 @@ use App\Http\Transformers\TransactionTransformer;
 use App\Transaction;
 use Illuminate\Http\JsonResponse;
 
-class TransactionsController extends Controller
+final class TransactionsController extends Controller
 {
     public function list(?string $id = null): JsonResponse
     {

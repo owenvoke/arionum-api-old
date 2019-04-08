@@ -6,7 +6,7 @@ use App\Generators\ArionumExplorer;
 use App\Transaction;
 use League\Fractal\TransformerAbstract;
 
-class TransactionTransformer extends TransformerAbstract
+final class TransactionTransformer extends TransformerAbstract
 {
     public static function transform(Transaction $transaction): array
     {

@@ -5,7 +5,7 @@ namespace App\Http\Transformers;
 use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
-class AliasTransformer extends TransformerAbstract
+final class AliasTransformer extends TransformerAbstract
 {
     public static function transform(object $data): array
     {

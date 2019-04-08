@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Transformers\BlockTransformer;
 use Illuminate\Http\JsonResponse;
 
-class BlocksController extends Controller
+final class BlocksController extends Controller
 {
     public function list(?string $id = null): JsonResponse
     {
