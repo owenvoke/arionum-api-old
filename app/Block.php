@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
 /**
- * Class Block
- *
  * @property-read string $id
  * @property-read string $generator
  * @property-read int    $height

@@ -6,7 +6,21 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.0.0-beta.1] - 2019-04-08
+
+### Added
+- Add a new error handler for Not Found exceptions ([efbd1e0c](https://github.com/pxgamer/arionum-api/commit/efbd1e0c7dc0ee240d1e479d759cdbace7354603))
+
+### Changed
+- Update the README to point to the Wiki ([8c288e7f](https://github.com/pxgamer/arionum-api/commit/8c288e7ff28eae5b409c8b4ae00f2f6f61dc13e1))
+
+### Removed
+- Remove the default base URI ([3c46a263](https://github.com/pxgamer/arionum-api/commit/3c46a263f6d73d89fbf1092cac75aff1f5236154))
+- Remove redundant PHPDoc comments ([fb81d53e](https://github.com/pxgamer/arionum-api/commit/fb81d53e47127edf2358e7094cad1c64a6a2023f))
+
 ## [v1.0.0-alpha.8] - 2019-04-08
+
+### Changed
 
 - Revert d2f21f27's static route callbacks ([34e982a3](https://github.com/pxgamer/arionum-api/commit/34e982a3096cb53918b2411e3b42eac1b8863949))
 
@@ -67,6 +81,8 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Initial release for alpha use
 
 [Unreleased]: https://github.com/pxgamer/arionum-api/compare/master...develop
+[v1.0.0-beta.1]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.8...v1.0.0-beta.1
+[v1.0.0-alpha.8]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.7...v1.0.0-alpha.8
 [v1.0.0-alpha.7]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.6...v1.0.0-alpha.7
 [v1.0.0-alpha.6]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.5...v1.0.0-alpha.6
 [v1.0.0-alpha.5]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.4...v1.0.0-alpha.5

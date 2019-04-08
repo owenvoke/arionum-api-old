@@ -5,8 +5,6 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Masternode
- *
  * @property-read string $public_key
  * @property-read int    $height
  * @property-read string $ip

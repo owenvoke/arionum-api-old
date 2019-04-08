@@ -15,8 +15,8 @@ use Laravel\Lumen\Routing\Router;
 |
 */
 
-// API Routes
-$router->group(['namespace' => 'v1', 'prefix' => 1, 'as' => 'v1'], function (Router $router) {
+/** @link https://git.io/aro-api-v1 */
+$router->group(['namespace' => 'v1', 'prefix' => 1, 'as' => 'v1'], function () use ($router) {
     $router->get('accounts[/{id}]', ['as' => 'accounts', 'uses' => 'AccountsController@list']);
     $router->get('blocks[/{id}]', ['as' => 'blocks', 'uses' => 'BlocksController@list']);
     $router->get('masternodes[/{id}]', ['as' => 'masternodes', 'uses' => 'MasternodesController@list']);
@@ -27,9 +27,4 @@ $router->group(['namespace' => 'v1', 'prefix' => 1, 'as' => 'v1'], function (Rou
 
     $router->get('faucet', ['as' => 'faucet', 'uses' => 'FaucetController@index']);
     $router->get('faucet/balance', ['as' => 'faucet.balance', 'uses' => 'FaucetController@balance']);
-});
-
-// General
-$router->get('', function (Router $router) {
-    return response()->json(['routes' => $router->namedRoutes]);
 });
