@@ -6,9 +6,12 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v1.0.0-alpha.7] - 2019-04-08
+
 ### Changed
 - Update the middleware to require content-type ([55514e54](https://github.com/pxgamer/arionum-api/commit/55514e54123cd675142a54f1165401e04a52e99d))
 - Update the route callbacks to be static ([d2f21f27](https://github.com/pxgamer/arionum-api/commit/d2f21f2740270298e365a4e0fd84bc393caaad5d))
+- Update PHPUnit to version 8 ([9e9d4f8a](https://github.com/pxgamer/arionum-api/commit/9e9d4f8a9e56a0d34c6746ca535074a38b226eca))
 
 ## [v1.0.0-alpha.6] - 2019-03-19
 
@@ -60,6 +63,7 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - Initial release for alpha use
 
 [Unreleased]: https://github.com/pxgamer/arionum-api/compare/master...develop
+[v1.0.0-alpha.7]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.6...v1.0.0-alpha.7
 [v1.0.0-alpha.6]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.5...v1.0.0-alpha.6
 [v1.0.0-alpha.5]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.4...v1.0.0-alpha.5
 [v1.0.0-alpha.4]: https://github.com/pxgamer/arionum-api/compare/v1.0.0-alpha.3...v1.0.0-alpha.4
