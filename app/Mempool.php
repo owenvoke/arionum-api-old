@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
 /**
- * Class Mempool
- *
  * @property-read string $id
  * @property-read int    $height
  * @property-read string $src

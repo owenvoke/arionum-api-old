@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * Class Account
- *
  * @property-read string                 $id
  * @property-read string                 $public_key
  * @property-read string                 $block
