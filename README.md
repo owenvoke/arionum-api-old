@@ -25,9 +25,11 @@ $ git clone https://github.com/pxgamer/arionum-api
 
 ## Usage
 
-1. Set up a web server to point at the `public` directory
-1. Set your clients `Content-Type` header to `application/json`
-1. Access the `/` route to see available API routes
+Documentation for the API is available on the [Wiki](https://github.com/pxgamer/arionum-api/wiki).
+
+For available API endpoints, browse to the relevant API version below:
+
+- [Version 1](https://github.com/pxgamer/arionum-api/wiki/API-Version-1)
 
 ## Change log
 
