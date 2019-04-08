@@ -6,7 +6,7 @@ use App\Account;
 use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
-class AccountTransformer extends TransformerAbstract
+final class AccountTransformer extends TransformerAbstract
 {
     public static function transform(Account $account): array
     {

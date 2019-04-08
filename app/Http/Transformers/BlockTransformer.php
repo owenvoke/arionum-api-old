@@ -6,7 +6,7 @@ use App\Block;
 use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
-class BlockTransformer extends TransformerAbstract
+final class BlockTransformer extends TransformerAbstract
 {
     public static function transform(Block $block): array
     {

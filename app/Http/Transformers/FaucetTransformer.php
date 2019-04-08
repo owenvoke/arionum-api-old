@@ -7,7 +7,7 @@ use App\Generators\ArionumExplorer;
 use League\Fractal\Resource\Collection;
 use League\Fractal\TransformerAbstract;
 
-class FaucetTransformer extends TransformerAbstract
+final class FaucetTransformer extends TransformerAbstract
 {
     protected $availableIncludes = [
         'transactions',
