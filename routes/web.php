@@ -28,8 +28,3 @@ $router->group(['namespace' => 'v1', 'prefix' => 1, 'as' => 'v1'], function () u
     $router->get('faucet', ['as' => 'faucet', 'uses' => 'FaucetController@index']);
     $router->get('faucet/balance', ['as' => 'faucet.balance', 'uses' => 'FaucetController@balance']);
 });
-
-// General
-$router->get('', function (Router $router) {
-    return response()->json(['routes' => $router->namedRoutes]);
-});
