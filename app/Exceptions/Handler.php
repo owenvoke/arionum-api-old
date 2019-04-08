@@ -6,21 +6,16 @@ use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-/**
- * Class Handler
- */
-class Handler extends ExceptionHandler
+final class Handler extends ExceptionHandler
 {
-    /**
-     * A list of the exception types that should not be reported.
-     *
-     * @var array
-     */
+    /** @var array */
     protected $dontReport = [
         AuthorizationException::class,
         HttpException::class,
@@ -33,7 +28,7 @@ class Handler extends ExceptionHandler
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception $exception
+     * @param Exception $exception
      * @return void
      * @throws Exception
      */
@@ -45,12 +40,19 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Exception               $exception
+     * @param Request   $request
+     * @param Exception $exception
      * @return JsonResponse
      */
     public function render($request, Exception $exception): JsonResponse
     {
+        if ($exception instanceof NotFoundHttpException) {
+            return new JsonResponse([
+                'status' => JsonResponse::HTTP_NOT_FOUND,
+                'message' => 'Requested resource not found, documentation is available on the Wiki',
+            ], Response::HTTP_NOT_FOUND);
+        }
+
         $parentRender = parent::render($request, $exception);
 
         if ($parentRender instanceof JsonResponse) {
