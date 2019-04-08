@@ -8,7 +8,7 @@ use App\Http\Transformers\AccountTransformer;
 use App\Http\Transformers\AliasTransformer;
 use Illuminate\Http\JsonResponse;
 
-class AliasController extends Controller
+final class AliasController extends Controller
 {
     public function list(?string $id = null): JsonResponse
     {

@@ -7,7 +7,7 @@ use App\Http\Transformers\MasternodeTransformer;
 use App\Masternode;
 use Illuminate\Http\JsonResponse;
 
-class MasternodesController extends Controller
+final class MasternodesController extends Controller
 {
     public function list(?string $id = null): JsonResponse
     {

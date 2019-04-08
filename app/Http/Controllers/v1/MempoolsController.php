@@ -7,7 +7,7 @@ use App\Http\Transformers\MempoolTransformer;
 use App\Mempool;
 use Illuminate\Http\JsonResponse;
 
-class MempoolsController extends Controller
+final class MempoolsController extends Controller
 {
     public function list(?string $id = null): JsonResponse
     {
