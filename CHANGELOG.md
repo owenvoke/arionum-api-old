@@ -8,6 +8,8 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [v1.0.0-alpha.8] - 2019-04-08
 
+### Changed
+
 - Revert d2f21f27's static route callbacks ([34e982a3](https://github.com/pxgamer/arionum-api/commit/34e982a3096cb53918b2411e3b42eac1b8863949))
 
 ## [v1.0.0-alpha.7] - 2019-04-08
