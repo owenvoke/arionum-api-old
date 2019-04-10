@@ -4,8 +4,8 @@ namespace App\GraphQL\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
+use Laravel\Lumen\Routing\Controller;
 use Rebing\GraphQL\GraphQLUploadMiddleware;
 
 final class LumenGraphQLController extends Controller
