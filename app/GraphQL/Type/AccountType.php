@@ -19,7 +19,7 @@ final class AccountType extends GraphQLType
         return [
 
             'id' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::nonNull(Type::id()),
                 'description' => 'The id of the account',
             ],
 
@@ -34,7 +34,7 @@ final class AccountType extends GraphQLType
             ],
 
             'balance' => [
-                'type' => Type::float(),
+                'type' => Type::nonNull(Type::float()),
                 'description' => 'The current balance of the account',
             ],
 

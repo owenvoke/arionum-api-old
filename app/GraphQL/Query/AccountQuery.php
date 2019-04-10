@@ -7,7 +7,7 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
 
-final class AccountsQuery extends Query
+final class AccountQuery extends Query
 {
     protected $attributes = [
         'name' => 'Accounts query',
@@ -21,10 +21,7 @@ final class AccountsQuery extends Query
     public function args(): array
     {
         return [
-            'id' => ['name' => 'id', 'type' => Type::string()],
-            'public_key' => ['name' => 'public_key', 'type' => Type::string()],
-            'block' => ['name' => 'block', 'type' => Type::string()],
-            'balance' => ['name' => 'balance', 'type' => Type::float()],
+            'id' => ['name' => 'id', 'type' => Type::id()],
             'alias' => ['name' => 'alias', 'type' => Type::string()],
         ];
     }
@@ -35,6 +32,10 @@ final class AccountsQuery extends Query
             return Account::where('id', $args['id'])->get();
         }
 
-        return Account::all();
+        if (isset($args['alias'])) {
+            return Account::where('alias', $args['alias'])->get();
+        }
+
+        return Account::query()->paginate();
     }
 }
