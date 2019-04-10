@@ -38,9 +38,8 @@ return [
     'default_schema' => 'default',
 
     // The schemas for query and/or mutation. It expects an array of schemas to provide
-    // both the 'query' fields and the 'mutation' fields.
-    //
-    // You can also provide a middleware that will only apply to the given schema
+    // both the 'query' fields and the 'mutation' fields. You can also provide a middleware
+    // that will only apply to the given schema
 
     'schemas' => [
         'default' => [
@@ -55,8 +54,8 @@ return [
         ],
     ],
 
-    // The types available in the application. You can then access it from the
-    // facade like this: GraphQL::type('user')
+    // The types available in the application. You can then access it from the facade like this:
+    // GraphQL::type('user')
 
     'types' => [
         'account' => AccountType::class,
@@ -100,9 +99,7 @@ return [
 
     'pagination_type' => PaginationType::class,
 
-    /*
-     * Config for GraphiQL (see (https://github.com/graphql/graphiql).
-     */
+    /* Config for GraphiQL (see (https://github.com/graphql/graphiql). */
 
     'graphiql' => [
         'display' => false,
