@@ -1,6 +1,6 @@
 <?php
 
-use App\GraphQL\Controller\LumenController;
+use App\GraphQL\Controllers\LumenGraphQLController;
 use App\GraphQL\Query\AccountsQuery;
 use App\GraphQL\Type\AccountType;
 use Rebing\GraphQL\GraphQL;
@@ -21,7 +21,7 @@ return [
     // to both query and mutation or an array containing the key 'query' and/or
     // 'mutation' with the according Controller and method
 
-    'controllers' => LumenController::class.'@query',
+    'controllers' => LumenGraphQLController::class.'@query',
 
     // Any middleware for the graphql route group
 

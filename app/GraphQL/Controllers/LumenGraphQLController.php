@@ -1,6 +1,6 @@
 <?php
 
-namespace App\GraphQL\Controller;
+namespace App\GraphQL\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
 use Rebing\GraphQL\GraphQLUploadMiddleware;
 
-final class LumenController extends Controller
+final class LumenGraphQLController extends Controller
 {
     public function query(Request $request, $schema = null)
     {
