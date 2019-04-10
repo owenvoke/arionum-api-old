@@ -3,6 +3,7 @@
 use App\GraphQL\Controllers\LumenGraphQLController;
 use App\GraphQL\Query\AccountsQuery;
 use App\GraphQL\Type\AccountType;
+use App\Http\Middleware\PreconditionHeaderMiddleware;
 use Rebing\GraphQL\GraphQL;
 use Rebing\GraphQL\Support\PaginationType;
 
@@ -25,7 +26,9 @@ return [
 
     // Any middleware for the graphql route group
 
-    'middleware' => [],
+    'middleware' => [
+        PreconditionHeaderMiddleware::class,
+    ],
 
     // Additional route group attributes
 
@@ -46,11 +49,9 @@ return [
             'query' => [
                 'accounts' => AccountsQuery::class,
             ],
-            'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
-            ],
+            'mutation' => [],
             'middleware' => [],
-            'method' => ['get', 'post'],
+            'method' => ['post'],
         ],
     ],
 
