@@ -3,7 +3,6 @@
 namespace App\GraphQL\Query;
 
 use App\Account;
-use GraphQL\Type\Definition\Type;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
@@ -16,15 +15,7 @@ final class AccountsQuery extends Query
 
     public function type()
     {
-        return GraphQL::type('Account');
-    }
-
-    public function args(): array
-    {
-        return [
-            'id' => ['name' => 'id', 'type' => Type::id()],
-            'alias' => ['name' => 'alias', 'type' => Type::string()],
-        ];
+        return GraphQL::paginate('Account');
     }
 
     public function resolve($root, $args): LengthAwarePaginator

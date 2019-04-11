@@ -15,7 +15,7 @@ final class AccountQuery extends Query
 
     public function type()
     {
-        return GraphQL::paginate('Account');
+        return GraphQL::type('Account');
     }
 
     public function args(): array
