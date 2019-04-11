@@ -1,6 +1,8 @@
 <?php
 
 use App\GraphQL\Controllers\LumenGraphQLController;
+use App\GraphQL\Query\AccountsQuery;
+use App\GraphQL\Type\AccountType;
 use App\Http\Middleware\PreconditionHeaderMiddleware;
 use Rebing\GraphQL\GraphQL;
 use Rebing\GraphQL\Support\PaginationType;
@@ -44,7 +46,9 @@ return [
 
     'schemas' => [
         'default' => [
-            'query' => [],
+            'query' => [
+                'accounts' => AccountsQuery::class,
+            ],
             'mutation' => [],
             'middleware' => [],
             'method' => ['post'],
@@ -54,7 +58,9 @@ return [
     // The types available in the application. You can then access it from the facade like this:
     // GraphQL::type('user')
 
-    'types' => [],
+    'types' => [
+        'Account' => AccountType::class,
+    ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.
     // The method should return an array representing the error.

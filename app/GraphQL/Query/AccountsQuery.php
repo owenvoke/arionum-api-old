@@ -7,10 +7,10 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
 
-final class AccountQuery extends Query
+final class AccountsQuery extends Query
 {
     protected $attributes = [
-        'name' => 'Account query',
+        'name' => 'Accounts query',
     ];
 
     public function type()
