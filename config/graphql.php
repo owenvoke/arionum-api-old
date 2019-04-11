@@ -1,6 +1,7 @@
 <?php
 
 use App\GraphQL\Controllers\LumenGraphQLController;
+use App\GraphQL\Query\AccountQuery;
 use App\GraphQL\Query\AccountsQuery;
 use App\GraphQL\Type\AccountType;
 use App\Http\Middleware\PreconditionHeaderMiddleware;
@@ -47,6 +48,7 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
+                'account' => AccountQuery::class,
                 'accounts' => AccountsQuery::class,
             ],
             'mutation' => [],

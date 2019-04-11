@@ -4,19 +4,18 @@ namespace App\GraphQL\Query;
 
 use App\Account;
 use GraphQL\Type\Definition\Type;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
 
-final class AccountsQuery extends Query
+final class AccountQuery extends Query
 {
     protected $attributes = [
-        'name' => 'Accounts query',
+        'name' => 'Account query',
     ];
 
     public function type()
     {
-        return GraphQL::type('Account');
+        return GraphQL::paginate('Account');
     }
 
     public function args(): array
@@ -27,8 +26,17 @@ final class AccountsQuery extends Query
         ];
     }
 
-    public function resolve($root, $args): LengthAwarePaginator
+    public function resolve($root, $args)
     {
-        return Account::query()->paginate($args['limit'], ['*'], 'page', $args['page']);
+
+        if (isset($args['id'])) {
+            return Account::query()->find($args['id']);
+        }
+
+        if (isset($args['alias'])) {
+            return Account::findByAlias($args['alias']);
+        }
+
+        return null;
     }
 }
