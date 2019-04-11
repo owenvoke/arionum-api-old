@@ -28,7 +28,6 @@ final class AccountQuery extends Query
 
     public function resolve($root, $args)
     {
-
         if (isset($args['id'])) {
             return Account::query()->find($args['id']);
         }
