@@ -10,6 +10,9 @@ use Rebing\GraphQL\Support\Query;
 
 final class AccountsQuery extends Query
 {
+    private const DEFAULT_LIMIT = 15;
+    private const DEFAULT_PAGE = 1;
+
     protected $attributes = [
         'name' => 'Accounts query',
     ];
@@ -29,6 +32,11 @@ final class AccountsQuery extends Query
 
     public function resolve($root, $args): LengthAwarePaginator
     {
-        return Account::query()->paginate($args['limit'], ['*'], 'page', $args['page']);
+        return Account::query()->paginate(
+            $args['limit'] ?? self::DEFAULT_LIMIT,
+            ['*'],
+            'page',
+            $args['page'] ?? self::DEFAULT_PAGE
+        );
     }
 }
