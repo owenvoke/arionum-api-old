@@ -22,6 +22,9 @@ final class MasternodeType extends GraphQLType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'The public key of the masternode',
                 'alias' => 'public_key',
+                'resolve' => function ($root) {
+                    return $root->public_key;
+                },
             ],
 
             'height' => [
@@ -38,6 +41,9 @@ final class MasternodeType extends GraphQLType
                 'type' => Type::int(),
                 'description' => 'The height of the last block that the masternode won',
                 'alias' => 'last_won',
+                'resolve' => function ($root) {
+                    return $root->last_won;
+                },
             ],
 
             'blacklist' => [
