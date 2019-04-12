@@ -23,6 +23,7 @@ final class AccountQuery extends Query
         return [
             'id' => ['name' => 'id', 'type' => Type::id()],
             'alias' => ['name' => 'alias', 'type' => Type::string()],
+            'publicKey' => ['name' => 'publicKey', 'type' => Type::string()],
         ];
     }
 
@@ -34,6 +35,10 @@ final class AccountQuery extends Query
 
         if (isset($args['alias'])) {
             return Account::findByAlias($args['alias']);
+        }
+
+        if (isset($args['publicKey'])) {
+            return Account::query()->where('public_key', $args['publicKey'])->first();
         }
 
         return null;
