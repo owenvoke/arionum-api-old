@@ -1,6 +1,9 @@
 <?php
 
 use App\GraphQL\Controllers\LumenGraphQLController;
+use App\GraphQL\Query\MasternodeQuery;
+use App\GraphQL\Query\MasternodesQuery;
+use App\GraphQL\Type\MasternodeType;
 use App\Http\Middleware\PreconditionHeaderMiddleware;
 use Rebing\GraphQL\GraphQL;
 use Rebing\GraphQL\Support\PaginationType;
@@ -44,7 +47,10 @@ return [
 
     'schemas' => [
         'default' => [
-            'query' => [],
+            'query' => [
+                'masternode' => MasternodeQuery::class,
+                'masternodes' => MasternodesQuery::class,
+            ],
             'mutation' => [],
             'middleware' => [],
             'method' => ['post'],
@@ -54,7 +60,9 @@ return [
     // The types available in the application. You can then access it from the facade like this:
     // GraphQL::type('user')
 
-    'types' => [],
+    'types' => [
+        'Masternode' => MasternodeType::class
+    ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.
     // The method should return an array representing the error.
