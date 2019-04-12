@@ -1,6 +1,9 @@
 <?php
 
 use App\GraphQL\Controllers\LumenGraphQLController;
+use App\GraphQL\Query\BlockQuery;
+use App\GraphQL\Query\BlocksQuery;
+use App\GraphQL\Type\BlockType;
 use App\Http\Middleware\PreconditionHeaderMiddleware;
 use Rebing\GraphQL\GraphQL;
 use Rebing\GraphQL\Support\PaginationType;
@@ -44,7 +47,10 @@ return [
 
     'schemas' => [
         'default' => [
-            'query' => [],
+            'query' => [
+                'block' => BlockQuery::class,
+                'blocks' => BlocksQuery::class,
+            ],
             'mutation' => [],
             'middleware' => [],
             'method' => ['post'],
@@ -54,7 +60,9 @@ return [
     // The types available in the application. You can then access it from the facade like this:
     // GraphQL::type('user')
 
-    'types' => [],
+    'types' => [
+        'Block' => BlockType::class,
+    ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.
     // The method should return an array representing the error.
