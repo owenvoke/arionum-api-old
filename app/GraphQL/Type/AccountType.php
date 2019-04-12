@@ -23,9 +23,13 @@ final class AccountType extends GraphQLType
                 'description' => 'The id or address of the account',
             ],
 
-            'public_key' => [
+            'publicKey' => [
                 'type' => Type::string(),
                 'description' => 'The public key registered with the account',
+                'alias' => 'public_key',
+                'resolve' => function ($root) {
+                    return $root->public_key;
+                },
             ],
 
             'block' => [
