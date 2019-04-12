@@ -35,7 +35,7 @@ final class MasternodeType extends GraphQLType
             ],
 
             'lastWon' => [
-                'type' => Type::nonNull(Type::int()),
+                'type' => Type::int(),
                 'description' => 'The height of the last block that the masternode won',
                 'alias' => 'last_won',
             ],

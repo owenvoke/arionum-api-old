@@ -21,14 +21,19 @@ final class MasternodeQuery extends Query
     public function args(): array
     {
         return [
-            'public_key' => ['name' => 'public_key', 'type' => Type::nonNull(Type::string())],
+            'publicKey' => ['name' => 'publicKey', 'type' => Type::string()],
+            'ip' => ['name' => 'ip', 'type' => Type::string()],
         ];
     }
 
     public function resolve($root, $args)
     {
-        if (isset($args['public_key'])) {
-            return Masternode::query()->find($args['public_key']);
+        if (isset($args['publicKey'])) {
+            return Masternode::query()->find($args['publicKey']);
+        }
+
+        if (isset($args['ip'])) {
+            return Masternode::query()->where('ip', $args['ip'])->first();
         }
 
         return null;
