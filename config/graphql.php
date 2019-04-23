@@ -7,9 +7,12 @@ use App\GraphQL\Query\BlockQuery;
 use App\GraphQL\Query\BlocksQuery;
 use App\GraphQL\Query\MasternodeQuery;
 use App\GraphQL\Query\MasternodesQuery;
+use App\GraphQL\Query\MempoolQuery;
+use App\GraphQL\Query\MempoolsQuery;
 use App\GraphQL\Type\AccountType;
 use App\GraphQL\Type\BlockType;
 use App\GraphQL\Type\MasternodeType;
+use App\GraphQL\Type\MempoolType;
 use App\Http\Middleware\PreconditionHeaderMiddleware;
 use Rebing\GraphQL\GraphQL;
 use Rebing\GraphQL\Support\PaginationType;
@@ -60,6 +63,8 @@ return [
                 'blocks' => BlocksQuery::class,
                 'masternode' => MasternodeQuery::class,
                 'masternodes' => MasternodesQuery::class,
+                'mempool' => MempoolQuery::class,
+                'mempools' => MempoolsQuery::class,
             ],
             'mutation' => [],
             'middleware' => [],
@@ -73,7 +78,8 @@ return [
     'types' => [
         'Account' => AccountType::class,
         'Block' => BlockType::class,
-        'Masternode' => MasternodeType::class
+        'Masternode' => MasternodeType::class,
+        'Mempool' => MempoolType::class,
     ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.
