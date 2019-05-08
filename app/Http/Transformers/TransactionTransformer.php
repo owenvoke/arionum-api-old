@@ -2,8 +2,8 @@
 
 namespace App\Http\Transformers;
 
-use App\Generators\ArionumExplorer;
 use App\Transaction;
+use App\Generators\ArionumExplorer;
 use League\Fractal\TransformerAbstract;
 
 final class TransactionTransformer extends TransformerAbstract

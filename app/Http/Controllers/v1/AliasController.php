@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\v1;
 
 use App\Account;
-use App\Http\Controllers\Controller;
-use App\Http\Transformers\AccountTransformer;
-use App\Http\Transformers\AliasTransformer;
 use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Http\Transformers\AliasTransformer;
+use App\Http\Transformers\AccountTransformer;
 
 final class AliasController extends Controller
 {

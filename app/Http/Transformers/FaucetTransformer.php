@@ -13,7 +13,6 @@ final class FaucetTransformer extends TransformerAbstract
         'transactions',
     ];
 
-
     public static function transform(Account $account): array
     {
         return [

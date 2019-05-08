@@ -4,8 +4,8 @@ namespace App\GraphQL\Query;
 
 use App\Mempool;
 use GraphQL\Type\Definition\Type;
-use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 
 final class MempoolQuery extends Query
 {
@@ -30,7 +30,5 @@ final class MempoolQuery extends Query
         if (isset($args['id'])) {
             return Mempool::query()->find($args['id']);
         }
-
-        return null;
     }
 }

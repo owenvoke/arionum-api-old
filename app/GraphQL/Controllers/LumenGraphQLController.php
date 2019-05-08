@@ -3,8 +3,8 @@
 namespace App\GraphQL\Controllers;
 
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller;
 use Rebing\GraphQL\GraphQLUploadMiddleware;
 
@@ -23,12 +23,12 @@ final class LumenGraphQLController extends Controller
             $schema = implode('/', $request->route()->parameters);
         }
 
-        if (!$schema) {
+        if (! $schema) {
             $schema = config('graphql.default_schema');
         }
 
         // If a singular query was not found, it means the queries are in batch
-        $isBatch = !$request->has('query');
+        $isBatch = ! $request->has('query');
         $batch = $isBatch ? $request->all() : [$request->all()];
 
         $completedQueries = [];
@@ -61,7 +61,7 @@ final class LumenGraphQLController extends Controller
         try {
             return app('auth')->user();
         } catch (Exception $e) {
-            return null;
+            return;
         }
     }
 

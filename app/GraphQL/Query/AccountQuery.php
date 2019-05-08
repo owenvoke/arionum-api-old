@@ -4,8 +4,8 @@ namespace App\GraphQL\Query;
 
 use App\Account;
 use GraphQL\Type\Definition\Type;
-use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 
 final class AccountQuery extends Query
 {
@@ -40,7 +40,5 @@ final class AccountQuery extends Query
         if (isset($args['publicKey'])) {
             return Account::query()->where('public_key', $args['publicKey'])->first();
         }
-
-        return null;
     }
 }

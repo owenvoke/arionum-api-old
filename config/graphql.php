@@ -1,21 +1,21 @@
 <?php
 
-use App\GraphQL\Controllers\LumenGraphQLController;
-use App\GraphQL\Query\AccountQuery;
-use App\GraphQL\Query\AccountsQuery;
+use Rebing\GraphQL\GraphQL;
+use App\GraphQL\Type\BlockType;
 use App\GraphQL\Query\BlockQuery;
+use App\GraphQL\Type\AccountType;
+use App\GraphQL\Type\MempoolType;
 use App\GraphQL\Query\BlocksQuery;
+use App\GraphQL\Query\AccountQuery;
+use App\GraphQL\Query\MempoolQuery;
+use App\GraphQL\Query\AccountsQuery;
+use App\GraphQL\Query\MempoolsQuery;
+use App\GraphQL\Type\MasternodeType;
 use App\GraphQL\Query\MasternodeQuery;
 use App\GraphQL\Query\MasternodesQuery;
-use App\GraphQL\Query\MempoolQuery;
-use App\GraphQL\Query\MempoolsQuery;
-use App\GraphQL\Type\AccountType;
-use App\GraphQL\Type\BlockType;
-use App\GraphQL\Type\MasternodeType;
-use App\GraphQL\Type\MempoolType;
-use App\Http\Middleware\PreconditionHeaderMiddleware;
-use Rebing\GraphQL\GraphQL;
 use Rebing\GraphQL\Support\PaginationType;
+use App\GraphQL\Controllers\LumenGraphQLController;
+use App\Http\Middleware\PreconditionHeaderMiddleware;
 
 return [
 
@@ -87,7 +87,7 @@ return [
 
     'error_formatter' => [GraphQL::class, 'formatError'],
 
-    /**
+    /*
      * Custom Error Handling
      *
      * Expected handler signature is: function (array $errors, callable $formatter): array
