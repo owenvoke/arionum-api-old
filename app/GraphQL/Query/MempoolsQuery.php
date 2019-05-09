@@ -4,9 +4,9 @@ namespace App\GraphQL\Query;
 
 use App\Mempool;
 use GraphQL\Type\Definition\Type;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
+use Rebing\GraphQL\Support\Facades\GraphQL;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 final class MempoolsQuery extends Query
 {

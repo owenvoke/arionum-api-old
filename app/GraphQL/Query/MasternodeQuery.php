@@ -4,8 +4,8 @@ namespace App\GraphQL\Query;
 
 use App\Masternode;
 use GraphQL\Type\Definition\Type;
-use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 
 final class MasternodeQuery extends Query
 {
@@ -35,7 +35,5 @@ final class MasternodeQuery extends Query
         if (isset($args['ip'])) {
             return Masternode::query()->where('ip', $args['ip'])->first();
         }
-
-        return null;
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Middleware\PreconditionHeaderMiddleware;
 use Laravel\Lumen\Routing\Router;
+use App\Http\Middleware\PreconditionHeaderMiddleware;
 
-/** @var Router $router */
+/* @var Router $router */
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ use Laravel\Lumen\Routing\Router;
 |
 */
 
-/** @link https://git.io/aro-api-v1 */
+/* @link https://git.io/aro-api-v1 */
 $router->group(
     ['namespace' => 'v1', 'prefix' => 1, 'as' => 'v1', 'middleware' => PreconditionHeaderMiddleware::class],
     function () use ($router) {

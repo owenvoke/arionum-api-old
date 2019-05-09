@@ -9,9 +9,9 @@ final class PreconditionHeaderMiddleware
 {
     public function handle($request, Closure $next)
     {
-        $contentType = (string)$request->headers->get('content-type');
+        $contentType = (string) $request->headers->get('content-type');
 
-        if (!$contentType || $contentType !== 'application/json') {
+        if (! $contentType || $contentType !== 'application/json') {
             throw new PreconditionFailedHttpException('Use the application/json content type');
         }
 

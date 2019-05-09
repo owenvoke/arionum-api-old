@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\v1;
 
 use App\Account;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Transformers\FaucetTransformer;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 final class FaucetController extends Controller
 {
