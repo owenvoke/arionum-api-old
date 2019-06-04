@@ -14,8 +14,7 @@
         "fzaninotto/faker": "^1.8",
         "mockery/mockery": "^1.2",
         "phpunit/phpunit": "^8.1",
-        "roave/security-advisories": "dev-master",
-        "squizlabs/php_codesniffer": "^3.4"
+        "roave/security-advisories": "dev-master"
     },
     "autoload": {
         "classmap": [
@@ -35,9 +34,7 @@
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
-        "test": "phpunit",
-        "check-style": "phpcs app tests",
-        "fix-style": "phpcbf app tests"
+        "test": "phpunit"
     },
     "config": {
         "preferred-install": "dist",
